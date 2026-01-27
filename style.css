@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fde2e2; /* warna pink lembut */
+  font-family: Arial, sans-serif;
+}
+
+/* CARD UTAMA */
+.all-container {
+  text-align: center;
+}
+
+/* JUDUL */
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #c0392b;
+}
+
+/* GROUP BUTTON */
+.btn-group {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+button {
+  padding: 10px 22px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* supaya halus */
+}
+
+.yes {
+  background: #2ecc71;
+  color: white;
+}
+
+.no {
+  background: #e74c3c;
+  color: white;
+  flex-shrink: 0;        /* ⛔ jangan ikut nyusut / melar */
+  height: fit-content;  /* ⛔ jangan ikut tinggi Yes */
+}
+
+.thank-you {
+  font-size: 32px;
+  font-weight: bold;
+  color: #c0392b;
+}
+
+
+
+/* GAMBAR */
+img {
+  width: 180px;
+}
