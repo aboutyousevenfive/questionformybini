@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>A Letter</title>
+
+  <style>
+    :root{
+      --bg:#e9f6f3;
+      --card:#eef9f7;
+      --accent:#6b4a3a;
+      --btn:#5a3d31;
+    }
+
+    *{
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      box-sizing:border-box;
+    }
+
+    body{
+      margin:0;
+      min-height:100vh;
+      background:
+        radial-gradient(#b8a7a0 1.2px, transparent 1.2px) 0 0/40px 40px,
+        var(--bg);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .wrap{
+      width:90%;
+      max-width:420px;
+      max-height:80vh;
+      overflow-y:auto;
+      background:var(--card);
+      border-radius:18px;
+      padding:26px 22px 28px;
+      box-shadow:0 10px 30px rgba(0,0,0,.1);
+      text-align:center;
+      animation:fade .6s ease;
+    }
+
+    .hide{display:none}
+
+    h1,h2{
+      color:var(--accent);
+      margin:10px 0;
+    }
+
+    p{
+      color:#5b4a42;
+      line-height:1.6;
+      font-size:15px;
+      margin-bottom:16px;
+    }
+
+    .btn{
+      margin-top:18px;
+      background:var(--btn);
+      color:#fff;
+      border:none;
+      border-radius:22px;
+      padding:10px 20px;
+      cursor:pointer;
+      font-size:14px;
+    }
+
+    .letter{
+      text-align:left;
+      margin-top:10px;
+    }
+
+    .letter h2{
+      text-align:center;
+    }
+
+    .music{
+      text-align:center;
+      margin-bottom:20px;
+    }
+
+     .spotify-wrapper {
+      margin-top: 16px;
+      opacity: 0.6;
+      pointer-events: none; 
+    }
+
+    iframe {
+      width: 100%;
+      height: 80px;
+      border-radius: 8px;
+      border: none;
+    }
+
+    @keyframes fade{
+      from{opacity:0;transform:translateY(8px)}
+      to{opacity:1}
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- OPEN PAGE -->
+<!-- OPEN PAGE -->
+<div class="wrap open-only" id="openPage">
+  <h3 style="color: #5b4a42;">Just open if u want</h3>
+  <button class="btn" onclick="openLetter()">Open</button>
+</div>
+
+
+<!-- LETTER PAGE -->
+<div class="wrap hide" id="letterPage">
+
+    <audio id="backsound" loop>
+  <source src="musik.mp3" type="audio/mpeg">
+</audio>
+
+  <div class="letter">
+    <h2>You still live in this song</h2>
+
+    <div class="spotify-wrapper">
+        <iframe
+          src="https://open.spotify.com/embed/track/4B3DEANIvod8552CbwftCG?utm_source=generator"
+          allow="encrypted-media">
+        </iframe>
+      </div>
+
+      <p>May all the affairs and things that keep you busy to the point of being overwhelmed run smoothly and be resolved well.</p>
+  </div>
+
+</div>
+
+<audio id="backsound" src="sampai-jadi-debu.mp3"></audio>
+
+<script>
+  function openLetter(){
+    document.getElementById("openPage").classList.add("hide");
+    document.getElementById("letterPage").classList.remove("hide");
+  }
+
+  function toggleMusic(){
+    if(!playing){
+      audio.play();
+      audio.volume = 0.5;
+      btn.textContent = "Pause music";
+    }else{
+      audio.pause();
+      btn.textContent = "Play music";
+    }
+    playing = !playing;
+  }
+
+   var audio = document.getElementById("backsound");
+
+  document.body.addEventListener("click", function() {
+    audio.play();
+  }, { once: true }); 
+
+  
+</script>
+
+</body>
+</html>
